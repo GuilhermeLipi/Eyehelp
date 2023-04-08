@@ -1,0 +1,7 @@
+{
+  "name": "Eyehelp",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
