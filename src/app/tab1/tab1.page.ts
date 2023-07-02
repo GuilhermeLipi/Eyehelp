@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicModule } from '@ionic/angular';
 import { NavController } from '@ionic/angular';
-import { ViacepProvider} from './viacep/viacep';
+
 
 
 @Component({
@@ -12,23 +12,6 @@ import { ViacepProvider} from './viacep/viacep';
   imports: [IonicModule],
 })
 export class Tab1Page {
-
-  private cep;
-	private endereco:any = {};
-	vazio = "";
-
-  constructor(public navCtrl: NavController, private viacep: ViacepProvider) {}
-
-	getEndereco(){
-		this.viacep.callService(this.cep)
-		.subscribe(
-        data =>{
-		this.endereco = data;
-		console.log(data);
-        }
-      );
-	}
-
 
 }
 
