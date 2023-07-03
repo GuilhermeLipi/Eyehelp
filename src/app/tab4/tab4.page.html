@@ -6,10 +6,18 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content >
+<ion-content>
+  <ion-item>
+    <ion-label>Data</ion-label>
+    <ion-datetime display-format="DD/MM/YYYY" [(ngModel)]="selectedDate"></ion-datetime>
+  </ion-item>
 
-<ion-datetime>
+  <ion-button expand="full" (click)="showEvent()">Criar Evento</ion-button>
 
-</ion-datetime>
-
+  <ion-list *ngIf="events.length > 0">
+    <ion-item *ngFor="let event of events">
+      <ion-label>{{ event.date | date: 'dd/MM/yyyy' }}</ion-label>
+      <ion-note slot="end">{{ event.description }}</ion-note>
+    </ion-item>
+  </ion-list>
 </ion-content>
